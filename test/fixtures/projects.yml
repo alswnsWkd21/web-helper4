@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pname: MyString
+  supportperiod: 2017-06-27 05:05:44
+  deadline: 2017-06-27 05:05:44
+  limitmoney: 1
+  planstate: MyString
+  pcontent: MyText
+  ptag: MyText
+
+two:
+  pname: MyString
+  supportperiod: 2017-06-27 05:05:44
+  deadline: 2017-06-27 05:05:44
+  limitmoney: 1
+  planstate: MyString
+  pcontent: MyText
+  ptag: MyText

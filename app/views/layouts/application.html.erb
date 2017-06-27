@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <link type="text/css" rel="stylesheet" href="./assets/css/style.css">
+  
+  <title>Workspace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+   <%= link_to root_path do%>
+     <section id="main-section">
+     <nav class="navigation">
+      <h1 class="Service-name">Paper</h1>
+      <div class="category-container">
+        <ul class="left-category-container">
+          <li class="category"><a href="#">이용방법</a></li>
+          <li class="category"><a href="/projects/new" data-method='post'>신청하기</a></li>
+          <li class="category"><a href="#">고객센터</a></li>
+        </ul>
+        <ul class="right-category-container">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+          <li class="category"><a href="/models/sign_in">Sign-in</a></li>
+          <li class="category"><a href="/models/sign_up">Sign-up</a></li>
+          <li class="category"><a href="/models/sign_out">Sign-out</a></a></li>
+          <li class="category"><img src="<%= image_url 'search_icon_white.png'%>" alt="검색"></li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+    
+<%= yield %>
+<% end %>
+</body>
+</html>

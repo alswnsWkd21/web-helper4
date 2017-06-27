@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pname:</strong>
+  <%= @project.pname %>
+</p>
+
+<p>
+  <strong>Supportperiod:</strong>
+  <%= @project.supportperiod %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @project.deadline %>
+</p>
+
+<p>
+  <strong>Limitmoney:</strong>
+  <%= @project.limitmoney %>
+</p>
+
+<p>
+  <strong>Planstate:</strong>
+  <%= @project.planstate %>
+</p>
+
+<p>
+  <strong>Pcontent:</strong>
+  <%= @project.pcontent %>
+</p>
+
+<p>
+  <strong>Ptag:</strong>
+  <%= @project.ptag %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
