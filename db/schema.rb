@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20170628132355) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "comments", force: :cascade do |t|
     t.integer  "project_id"
     t.integer  "user_id"
@@ -31,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170628132355) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id"
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -40,36 +37,26 @@ ActiveRecord::Schema.define(version: 20170628132355) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "projects", force: :cascade do |t|
-    t.string   "pname"
-    t.datetime "supportperiod"
-    t.datetime "deadline"
-    t.integer  "limitmoney"
-    t.string   "planstate"
-    t.text     "pcontent"
-    t.text     "ptag"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.json     "photos"
-  end
+# Could not dump table "projects" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
+    t.string   "name"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
-  add_foreign_key "messages", "users"
 end

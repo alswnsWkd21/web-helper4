@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
   def create
     @message = current_user.messages.build(message_params)
     @message.save
-    respond_with { @message }
+
   end
 
   private
