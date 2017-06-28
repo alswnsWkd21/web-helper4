@@ -1,5 +1,16 @@
-<h1>New Project</h1>
+<section id="new-post">
+    
+    <div class="container bg-white">
+        <header>
+            <h2>프로젝트 작성하기</h2>
+        </header>
+        <hr>
+        <%= render 'form' %>
+    </div>
+</section>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', projects_path %>
+<script type="text/javascript">
+    var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    var elm = document.getElementById('new-post');
+    elm.style.height = height + 'px';
+</script>

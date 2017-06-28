@@ -1,16 +1,31 @@
-<h2>Forgot your password?</h2>
+<div id="forgot-password">
+  <div class="finding-password">
+    <div class="finding-password-title">
+<h2>비밀번호를 잊으셨습니까?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
+</div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :email, :class => "email" %><br />
+    <%= f.email_field :email, :class => "email-box", autofocus: true %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+    <%= f.submit "Send me reset password instructions", :class => "send-button" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>
+
+<script type="text/javascript">
+  var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+  var width = window.innerWidth || document.documentElement.colentWidth || document.body.clientWidth;
+  
+  var elm = document.getElementById("forgot-password");
+  elm.style.height = height + "px";
+  
+</script>

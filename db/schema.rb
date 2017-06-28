@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170628132355) do
+ActiveRecord::Schema.define(version: 20170628162014) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "project_id"
@@ -39,6 +39,11 @@ ActiveRecord::Schema.define(version: 20170628132355) do
 
 # Could not dump table "projects" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
+
+  create_table "searches", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

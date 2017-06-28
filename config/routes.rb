@@ -18,7 +18,10 @@ Rails.application.routes.draw do
   post "projects/show/:project_id/comments/create" => "comments#create"
   post "projects/show/:project_id/comments/delete/:comment_id" => "comments#delete"
   
+  
+  post '/searches/search' => 'searches#search'     
+  
   Rails.application.routes.draw do
-    root to: "posts#index"
+    root "posts#index"
   end
 end

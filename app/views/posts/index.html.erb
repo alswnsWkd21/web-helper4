@@ -1,11 +1,266 @@
-<h1>Posts</h1>
-<hr />
-<% @posts.each do |post| %>
-  <h2><%= post.title %></h2>
-  <p>
-  <%= post.body %>
-  </p>
-<% end %>
-<hr />
-<%= paginate @posts %>
-<%= page_entries_info @posts %>
+<form action = "/searches/search" method =post>
+  <input type="text" name ="search_content">
+  <input type= "submit" values="검색">
+</form>
+
+      <div id="main-item-container" class="item-data-container">
+        <div class="item-data-inner">
+          <div class="item-header">
+            <h3>Delicious food</h3>
+            <h5>blog</h5>
+          </div>
+          <div class="item-body">
+            <h4>요리 & 레시피</h4>
+            <div class="icon-bundle">
+              <img src="<%= image_url('database.png')%>" alt="BackEnd-Developer">
+              <img src="<%= image_url('photoshop.png')%>" alt="Designer">
+              <img src="<%= image_url('html.png')%>" alt="FrontEnd-Developer">
+                  
+            </div>
+          </div>
+        </div>
+        <div class="item-expires-container">
+        	<h4>By 2017.05.01</h4>
+        	<div class="item-expires-dday">
+        		<img src="<%= image_url('timer.png')%>" alt="timer icon">
+      		  <h4 class="left-day">5 </h4><h4>Days</h4>
+      	  </div>
+        </div>
+      </div>
+  </section>
+  <aside class="aside-item-container">
+    <div class="arrow"></div>
+    <ul class="grid-container">
+      <li class="item col-lg-1 col-xl-1 col-sm-1">
+        <img class="item-img" src="<%= image_url('trip.jpeg')%>"></img>
+        <div class="item-data-container">
+          <div class="item-data-inner">
+            <div class="item-header">
+              <h3>Delicious food</h3>
+              <h5>blog</h5>
+            </div>
+            <div class="item-body">
+              <h4>요리 & 레시피</h4>
+              <div class="icon-bundle">
+                <img src="<%= image_url "database.png"%>" alt="BackEnd-Developer">
+                <img src="<%= image_url "photoshop.png"%>" alt="Designer">
+                <img src="<%= image_url "html.png"%>" alt="FrontEnd-Developer">
+              </div>
+            </div>
+          </div>
+          <div class="item-expires-container">
+        	  <h4>By 2017.05.01</h4>
+        	  <div class="item-expires-dday">
+        		  <img src="<%= image_url "timer.png"%>" alt="timer icon">
+      		    <h4 class="left-day">5 </h4><h4>Days</h4>
+      	    </div>
+          </div>
+        </div>
+      </li>
+      <li class="item col-lg-1 col-xl-1 col-sm-1">
+        <img class="item-img" src="<%= image_url "trip.jpeg"%>"></img>
+        <div class="item-data-container">
+          <div class="item-data-inner">
+            <div class="item-header">
+              <h3>Delicious food</h3>
+              <h5>blog</h5>
+            </div>
+            <div class="item-body">
+              <h4>요리 & 레시피</h4>
+              <div class="icon-bundle">
+                <img src="<%= image_url "database.png"%>" alt="BackEnd-Developer">
+                <img src="<%= image_url "photoshop.png"%>" alt="Designer">
+                <img src="<%= image_url "html.png"%>" alt="FrontEnd-Developer">
+              </div>
+            </div>
+          </div>
+          <div class="item-expires-container">
+        	  <h4>By 2017.05.01</h4>
+        	  <div class="item-expires-dday">
+        		  <img src="<%= image_url "timer.png"%>" alt="timer icon">
+      		    <h4 class="left-day">5 </h4><h4>Days</h4>
+      	    </div>
+          </div>
+        </div>
+      </li>
+      <li class="item col-lg-1 col-xl-1 col-sm-1">
+        <img class="item-img" src="<%= image_url "trip.jpeg"%>"></img>
+        <div class="item-data-container">
+          <div class="item-data-inner">
+            <div class="item-header">
+              <h3>Delicious food</h3>
+              <h5>blog</h5>
+            </div>
+            <div class="item-body">
+              <h4>요리 & 레시피</h4>
+              <div class="icon-bundle">
+                <img src="<%= image_url "database.png"%>" alt="BackEnd-Developer">
+                <img src="<%= image_url "photoshop.png"%>" alt="Designer">
+                <img src="<%= image_url "html.png"%>" alt="FrontEnd-Developer">
+              </div>
+            </div>
+          </div>
+          <div class="item-expires-container">
+        	  <h4>By 2017.05.01</h4>
+        	  <div class="item-expires-dday">
+        		  <img src="<%= image_url "timer.png"%>" alt="timer icon">
+      		    <h4 class="left-day">5 </h4><h4>Days</h4>
+      	    </div>
+          </div>
+        </div>
+      </li>
+      <li class="item col-lg-1 col-xl-1 col-sm-1">
+        <img class="item-img" src="<%= image_url "trip.jpeg"%>"></img>
+        <div class="item-data-container">
+          <div class="item-data-inner">
+            <div class="item-header">
+              <h3>Delicious food</h3>
+              <h5>blog</h5>
+            </div>
+            <div class="item-body">
+              <h4>요리 & 레시피</h4>
+              <div class="icon-bundle">
+                <img src="<%= image_url "database.png"%>" alt="BackEnd-Developer">
+                <img src="<%= image_url "photoshop.png"%>" alt="Designer">
+                <img src="<%= image_url "html.png"%>" alt="FrontEnd-Developer">
+              </div>
+            </div>
+          </div>
+          <div class="item-expires-container">
+        	  <h4>By 2017.05.01</h4>
+        	  <div class="item-expires-dday">
+        		  <img src="<%= image_url "timer.png"%>" alt="timer icon">
+      		    <h4 class="left-day">5 </h4><h4>Days</h4>
+      	    </div>
+          </div>
+        </div>
+      </li>
+      <li class="item col-lg-1 col-xl-1 col-sm-1">
+        <img class="item-img" src="<%= image_url "trip.jpeg"%>"></img>
+        <div class="item-data-container">
+          <div class="item-data-inner">
+            <div class="item-header">
+              <h3>Delicious food</h3>
+              <h5>blog</h5>
+            </div>
+            <div class="item-body">
+              <h4>요리 & 레시피</h4>
+              <div class="icon-bundle">
+                
+                <img src="<%= image_url "database.png"%>" alt="BackEnd-Developer">
+                <img src="<%= image_url "photoshop.png"%>" alt="Designer">
+                <img src="<%= image_url "html.png"%>" alt="FrontEnd-Developer">
+              </div>
+            </div>
+          </div>
+          <div class="item-expires-container">
+        	  <h4>By 2017.05.01</h4>
+        	  <div class="item-expires-dday">
+        		  <img src="<%= image_url "timer.png"%>" alt="timer icon">
+      		    <h4 class="left-day">5 </h4><h4>Days</h4>
+      	    </div>
+          </div>
+        </div>
+      </li>
+      <li class="item col-lg-1 col-xl-1 col-sm-1">
+        <img class="item-img" src="<%= image_url "trip.jpeg"%>"></img>
+        <div class="item-data-container">
+          <div class="item-data-inner">
+            <div class="item-header">
+              <h3>Delicious food</h3>
+              <h5>blog</h5>
+            </div>
+            <div class="item-body">
+              <h4>요리 & 레시피</h4>
+              <div class="icon-bundle">
+                <img src="<%= image_url "database.png"%>" alt="BackEnd-Developer">
+                <img src="<%= image_url "photoshop.png"%>" alt="Designer">
+                <img src="<%= image_url "html.png"%>" alt="FrontEnd-Developer">
+              </div>
+            </div>
+          </div>
+          <div class="item-expires-container">
+        	  <h4>By 2017.05.01</h4>
+        	  <div class="item-expires-dday">
+        		  <img src="<%= image_url "timer.png"%>" alt="timer icon">
+      		    <h4 class="left-day">5 </h4><h4>Days</h4>
+      	    </div>
+          </div>
+        </div>
+      </li>
+      <li class="item col-lg-1 col-xl-1 col-sm-1">
+        <img class="item-img" src="<%= image_url "trip.jpeg"%>"></img>
+        <div class="item-data-container">
+          <div class="item-data-inner">
+            <div class="item-header">
+              <h3>Delicious food</h3>
+              <h5>blog</h5>
+            </div>
+            <div class="item-body">
+              <h4>요리 & 레시피</h4>
+              <div class="icon-bundle">
+                <img src="<%= image_url "database.png"%>" alt="BackEnd-Developer">
+                <img src="<%= image_url "photoshop.png"%>" alt="Designer">
+                <img src="<%= image_url "html.png"%>" alt="FrontEnd-Developer">
+              </div>
+            </div>
+          </div>
+          <div class="item-expires-container">
+        	  <h4>By 2017.05.01</h4>
+        	  <div class="item-expires-dday">
+        		  <img src="<%= image_url "timer.png"%>" alt="timer icon">
+      		    <h4 class="left-day">5 </h4><h4>Days</h4>
+      	    </div>
+          </div>
+        </div>
+      </li>
+      <li class="item col-lg-1 col-xl-1 col-sm-1">
+        <img class="item-img" src="<%= image_url "trip.jpeg"%>"></img>
+        <div class="item-data-container">
+          <div class="item-data-inner">
+            <div class="item-header">
+              <h3>Delicious food</h3>
+              <h5>blog</h5>
+            </div>
+            <div class="item-body">
+              <h4>요리 & 레시피</h4>
+              <div class="icon-bundle">
+                <img src="<%= image_url "database.png"%>" alt="BackEnd-Developer">
+                <img src="<%= image_url "photoshop.png"%>" alt="Designer">
+                <img src="<%= image_url "html.png"%>" alt="FrontEnd-Developer">
+              </div>
+            </div>
+          </div>
+          <div class="item-expires-container">
+        	  <h4>By 2017.05.01</h4>
+        	  <div class="item-expires-dday">
+        		<img src="<%= image_url "timer.png"%>" alt="timer icon">
+      		    <h4 class="left-day">5 </h4><h4>Days</h4>
+      	    </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="arrow"></div>
+  </aside>
+  <footer class="footer">
+
+  </footer>
+
+  <script type="text/javascript">
+    var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    var width = window.innerHeight || document.documentElement.clientwidth || document.body.clientWidth;
+    var p = document.getElementById("test");
+    var mainSection = document.getElementById("main-section");
+    var mainItem = document.getElementById("main-item-container");
+    resizeHandler();
+    window.addEventListener("resize", resizeHandler);
+    function resizeHandler() {
+      height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      width = window.innerWidth || document.documentElement.clientWidth ||document.body.clientWidth;
+      mainItem.style.top = height - 205 + "px";
+      mainItem.style.left = width - 320 + "px";
+      mainSection.style.height = height + "px";
+    }
+  </script>
+

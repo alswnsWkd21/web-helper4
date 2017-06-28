@@ -1,4 +1,5 @@
 <%= form_for(@project) do |f| %>
+
   <% if @project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -10,39 +11,58 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :pname %><br>
-    <%= f.text_field :pname %>
+  <div class="row">
+    <div class="col-lg-6">
+      <span><%= f.label :페이지이름 %></span></span><br>
+      <%= f.text_field :pname, :class => 'tf-name input' %>
+    </div>
+    <div class="col-lg-6">
+      <span><%= f.label :"페이지 종류" %></span><br>
+      <%= radio_button_tag(:pageType, "0") %>&nbsp;
+      <%= label_tag(:radio_field, "개인블로그") %>
+      &nbsp;&nbsp;&nbsp;
+      <%= radio_button_tag(:pageType, "1") %>&nbsp;
+      <%= label_tag(:radio_field, "단체블로그") %>
+      &nbsp;&nbsp;&nbsp;
+      <%= radio_button_tag(:pageType, "2") %>&nbsp;
+      <%= label_tag(:radio_field, "스타트업") %>
+      &nbsp;&nbsp;&nbsp;
+      <%= radio_button_tag(:pageType, "3") %>&nbsp;
+      <%= label_tag(:radio_field, "기타") %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :supportperiod %><br>
-    <%= f.datetime_select :supportperiod %>
+  <div class="row">
+    <div class="col-lg-3">
+      <span><%= f.label :기한 %></span><br>
+      <%= f.date_field :deadline, :type => 'date', :value => Date.today.strftime("%Y-%m-%d"), :class => 'input' %>
+    </div>
+    <div class="col-lg-3 input-img">
+      <span><%= f.label :"넣고 싶은 이미지" %></span><br>
+      <div class="input-file">
+        <%= f.file_field :photos, multiple: true, :class => "ff-img" %>
+      </div>    
+    </div>
+    
+    <div class="check_field col-lg-6">
+      <span><%= f.label :"필요한 기술자" %></span><br>
+      <%= check_box(:skillType[0], "0") %>&nbsp; <%= f.label :"프론트앤드 개발자" %>&nbsp;&nbsp;&nbsp;
+      <%= check_box(:skillType[1], "1") %>&nbsp; <%= f.label :"백앤드 개발자 " %>&nbsp;&nbsp;&nbsp;
+      <%= check_box(:skillType[2], "2") %>&nbsp; <%= f.label :"디자이너" %>&nbsp;&nbsp;&nbsp;
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :deadline %><br>
-    <%= f.datetime_select :deadline %>
+    
+  
+  <div class="row">
+    <div class="col-lg-12">
+      <span><%= f.label :"기타 요구사항" %></span><br>
+      <%= f.text_area :pcontent, :class => "ta-requirement input" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :limitmoney %><br>
-    <%= f.number_field :limitmoney %>
-  </div>
-  <div class="field">
-    <%= f.label :planstate %><br>
-    <%= f.text_field :planstate %>
-  </div>
-  <div class="field">
-    <%= f.label :pcontent %><br>
-    <%= f.text_area :pcontent %>
-  </div>
-  <div class="field">
-    <%= f.label :ptag %><br>
-    <%= f.text_area :ptag %>
-  </div>
-   <div class="field">
-    <%= f.label :photos %>
-    <%= f.file_field :photos, multiple: true %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  
+  <div class="actions"></span><br>
+    <%= f.submit :"글쓰기", :class => "submit-button" %>
+    <a href="/">
+      <button class="cancel-button">취소</button>
+    </a>
   </div>
 <% end %>

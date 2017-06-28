@@ -2,16 +2,13 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <link type="text/css" rel="stylesheet" href="./assets/css/style.css">
-  
   <title>Workspace</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'style' => true %>
   <%= csrf_meta_tags %>
-  
 </head>
 <body>
-
    <%= link_to root_path do%>
      <section id="main-section">
      <nav class="navigation">
@@ -25,19 +22,50 @@
         <ul class="right-category-container">
           <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p>
-          <li class="category"><a href="/users/sign_in">Sign-in</a></li>
-          <li class="category"><a href="/users/sign_up">Sign-up</a></li>
-          <li class="category"><a href="/users/sign_out">Sign-out</a></a></li>
-          <li class="category"><img src="<%= image_url 'search_icon_white.png'%>" alt="검색"></li>
+          <li class="category"><a href="/models/sign_in">Sign-in</a></li>
+          <li class="category"><a href="/models/sign_up">Sign-up</a></li>
+          <li class="category"><a href="/models/sign_out">Sign-out</a></a></li>
+          <li class="category">
+            <form id="search"
+              action="">
+              <label for="search_input"></label>
+              <div class="search-container">
+              <div class="">
+                <input
+                  type="text"
+                  id="search_input"
+                  class="search-input">
+              </div>
+              <div class="">
+                <button type="submit" onclick="searchTrigger(this)" >검색</button>
+              </div>
+              </div>
+            </form>
+          </li>
         </ul>
       </div>
     </nav>
   </section>
-  
+    
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-    
+
 <%= yield %>
 <% end %>
+  <script>
+    // var searchForm = document.querySelector('#search');
+    // var searchTrigger = document.querySelector('.search-trigger');
+    // searchTrigger.addEventListener('click', function(event) {
+    //   event.preventDefault();
+    //   searchForm.style.opacity = 1;
+    //   this.style.opacity = 0;
+    //   var _this = this;
+    //   window.setTimeout(function() {
+    //     _this.style.display = 'none';
+    //   }, 200)
+    // })
+    
+    
+  </script>
 </body>
 </html>
