@@ -3,8 +3,8 @@
 <% @posts.each do |post| %>
   <h3>
     <a href="/posts/<%= post.id %>">
-      <%= post.name %>
       <%= post.title %>
+      <%= post.body %>
     </a>
   </h3>
   

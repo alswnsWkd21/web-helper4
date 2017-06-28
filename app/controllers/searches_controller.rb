@@ -1,6 +1,6 @@
 class SearchesController < ApplicationController
     def search
         word=params[:search_content]
-        @posts = Post.where("name LIKE ? or content LIKE ? or title LIKE ?", "%#{word}%", "%#{word}%", "%#{word}%")
+        @posts = Post.where("title LIKE ? or body LIKE ?", "%#{word}%", "%#{word}%")
     end
 end

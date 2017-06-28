@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :profiles
   get 'posts/index'
 
   resources :messages
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
   resources :projects
   # root "projects#index"
   get "projects/index"
-  get "projects/new" => "projects#new"
+  post "/projects/new" => "projects#new"
   get "projects/show/:project_id" => "projects#set_project"
   
   post "projects/show/:project_id/comments/create" => "comments#create"
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
   post '/searches/search' => 'searches#search'     
   
   Rails.application.routes.draw do
+  resources :profiles
     root "posts#index"
   end
 end

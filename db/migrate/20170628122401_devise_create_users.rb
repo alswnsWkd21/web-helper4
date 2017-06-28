@@ -32,13 +32,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.timestamps null: false
     end
     
-    create_table :profiles do |t|
-      t.belongs_to :users, index: { unique: true }, foreign_key: true
-      t.string :carrier
-      t.string :main
-      t.text :introduction
-    end
-    
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true
