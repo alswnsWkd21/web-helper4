@@ -1,43 +1,62 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Pname:</strong>
+  <strong>프로젝트 명</strong>
   <%= @project.pname %>
 </p>
 
 <p>
-  <strong>Supportperiod:</strong>
+  <strong>지원기간</strong>
   <%= @project.supportperiod %>
 </p>
 
 <p>
-  <strong>Deadline:</strong>
+  <strong>마감기한</strong>
   <%= @project.deadline %>
 </p>
 
 <p>
-  <strong>Limitmoney:</strong>
+  <strong>예상금액</strong>
   <%= @project.limitmoney %>
 </p>
 
 <p>
-  <strong>Planstate:</strong>
+  <strong>진행상태</strong>
   <%= @project.planstate %>
 </p>
 
 <p>
-  <strong>Pcontent:</strong>
+  <strong>내용</strong>
   <%= @project.pcontent %>
 </p>
 
 <p>
-  <strong>Ptag:</strong>
+  <strong>필요한기술 태그</strong>
   <%= @project.ptag %>
 </p>
 <div>
+<p>
+  <strong>자료</strong>
+</p>
 <% @project.photos.each do | photo | %>
   <img src="<%= photo.thumb.url %>" />
 <% end %>
 </div>   
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+
+<hr>
+<h3>댓글</h3>
+<form action="/projects/show/<%= @project.id%>/comments/create" method="post" >
+    <input type='text' name='input_comment'>
+    <input type="submit">
+</form>
+<hr>
+<% @comments.each do |comment|%>
+    <p>
+        <%= comment.content %> 
+       <a href="/projects/show/<%= @project.id%>/comments/delete/<%= comment.id%>" data-method='post' data-confirm="이 댓글을 삭제하시겠습니까?">[x]</a>
+    </p>
+<% end %>
+<hr>
+<%= link_to '[목록으로가기]', projects_path %>
+<%= link_to '[수정]', edit_project_path(@project) %>
+<a href="/projects/delete/<%=@project.id%>" data-confirm="진짜로 삭제 하시겠어요?"data-method="post">[삭제]</a>

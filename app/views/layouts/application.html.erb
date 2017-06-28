@@ -8,8 +8,10 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  
 </head>
 <body>
+
    <%= link_to root_path do%>
      <section id="main-section">
      <nav class="navigation">
@@ -23,9 +25,9 @@
         <ul class="right-category-container">
           <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p>
-          <li class="category"><a href="/models/sign_in">Sign-in</a></li>
-          <li class="category"><a href="/models/sign_up">Sign-up</a></li>
-          <li class="category"><a href="/models/sign_out">Sign-out</a></a></li>
+          <li class="category"><a href="/users/sign_in">Sign-in</a></li>
+          <li class="category"><a href="/users/sign_up">Sign-up</a></li>
+          <li class="category"><a href="/users/sign_out">Sign-out</a></a></li>
           <li class="category"><img src="<%= image_url 'search_icon_white.png'%>" alt="검색"></li>
         </ul>
       </div>

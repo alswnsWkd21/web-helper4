@@ -4,12 +4,14 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
+    # debugger
     @projects = Project.all
   end
 
   # GET /projects/1
   # GET /projects/1.json
   def show
+
   end
 
   # GET /projects/new
@@ -64,9 +66,15 @@ class ProjectsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
-      @project = Project.find(params[:id])
+      if params[:id]
+        @project = Project.find(params[:id])
+        @comments = Comment.where(project_id: params[:id])
+      else
+        @project = Project.find(params[:project_id])
+        @comments = Comment.where(project_id: params[:project_id])
+      end
     end
-
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
       params.require(:project).permit(:pname, :supportperiod, :deadline, :limitmoney, :planstate, :pcontent, :ptag, {photos: []})
