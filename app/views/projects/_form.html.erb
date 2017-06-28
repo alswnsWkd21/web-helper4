@@ -18,16 +18,16 @@
     </div>
     <div class="col-lg-6">
       <span><%= f.label :"페이지 종류" %></span><br>
-      <%= radio_button_tag(:pageType, "0") %>&nbsp;
+      <%= f.radio_button(:pageType, "0") %>&nbsp;
       <%= label_tag(:radio_field, "개인블로그") %>
       &nbsp;&nbsp;&nbsp;
-      <%= radio_button_tag(:pageType, "1") %>&nbsp;
+      <%= f.radio_button(:pageType, "1") %>&nbsp;
       <%= label_tag(:radio_field, "단체블로그") %>
       &nbsp;&nbsp;&nbsp;
-      <%= radio_button_tag(:pageType, "2") %>&nbsp;
+      <%= f.radio_button(:pageType, "2") %>&nbsp;
       <%= label_tag(:radio_field, "스타트업") %>
       &nbsp;&nbsp;&nbsp;
-      <%= radio_button_tag(:pageType, "3") %>&nbsp;
+      <%= f.radio_button(:pageType, "3") %>&nbsp;
       <%= label_tag(:radio_field, "기타") %>
     </div>
   </div>
@@ -45,9 +45,9 @@
     
     <div class="check_field col-lg-6">
       <span><%= f.label :"필요한 기술자" %></span><br>
-      <%= check_box(:skillType[0], "0") %>&nbsp; <%= f.label :"프론트앤드 개발자" %>&nbsp;&nbsp;&nbsp;
-      <%= check_box(:skillType[1], "1") %>&nbsp; <%= f.label :"백앤드 개발자 " %>&nbsp;&nbsp;&nbsp;
-      <%= check_box(:skillType[2], "2") %>&nbsp; <%= f.label :"디자이너" %>&nbsp;&nbsp;&nbsp;
+      <%= check_box(:skillType0, "1") %>&nbsp; <%= f.label :"프론트앤드 개발자" %>&nbsp;&nbsp;&nbsp;
+      <%= check_box(:skillType1, "1") %>&nbsp; <%= f.label :"백앤드 개발자 " %>&nbsp;&nbsp;&nbsp;
+      <%= check_box(:skillType2, "1") %>&nbsp; <%= f.label :"디자이너" %>&nbsp;&nbsp;&nbsp;
     </div>
   </div>
     

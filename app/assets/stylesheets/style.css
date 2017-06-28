@@ -11,7 +11,7 @@ body {
 }
 
 #main-section {
-  background-image: linear-gradient(to bottom,transparent 50%, white 100%),  url("Pasta.jpg");
+  background-image: linear-gradient(to bottom,transparent 50%, white 100%),  url("laptop.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -50,14 +50,6 @@ body {
   align-items: center;
 }
 
-.search-container {
-  margin-left: 12px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: center;
-}
-
 .category {
   font-size: 18px;
   color: white;
@@ -86,6 +78,7 @@ body {
 
 
 .item-data-container {
+  text-decoration: none;
   background-color: white;
   display: inline-block;
   width: 250px;
@@ -211,8 +204,36 @@ body {
   width: 250px
 }
 
-#search_input {
-  width: 40px;
-  opacity: 0;
-  
+.search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-items: center;
+  flex-wrap: no-wrap;
 }
+
+.tf-container {
+  display:none;
+  opacity: 0;
+}
+
+.search-btn {
+  width: 30px;
+  height: 30px;
+  background-image: url(search_icon_white.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#search_input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 2px solid white;
+}
+

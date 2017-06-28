@@ -1,28 +1,42 @@
-<p id="notice"><%= notice %></p>
-
+<!--<p id="notice"><%= notice %></p>-->
+<div class="project-content-container">
 <p>
   <strong>프로젝트 명</strong>
   <%= @project.pname %>
 </p>
 
 <p>
-  <strong>지원기간</strong>
-  <%= @project.supportperiod %>
+  <strong>페이지 종류</strong>
+  <% if @project.pageType == "0" %>
+    gg
+  <% elsif @project.pageType == "1" %>
+    bbb
+  <% elsif @project.pageType == "2" %>
+    ccc
+  <% elsif @project.pageType == "2" %>
+    aa
+  <% end %>
 </p>
 
 <p>
-  <strong>마감기한</strong>
+  <strong>마감기간</strong>
   <%= @project.deadline %>
 </p>
 
 <p>
-  <strong>예상금액</strong>
-  <%= @project.limitmoney %>
+  <strong>필요한 기술자</strong>
+  <% if @project.skillType0 == "1" %>
+    프론트앤드 개발자
+  <% elsif @project.skillType1 == "1"%>
+    백앤드 개발자
+  <% elsif @project.skillType2 == "1"%>
+  디자이너
+  <% end %>
 </p>
 
 <p>
-  <strong>진행상태</strong>
-  <%= @project.planstate %>
+  <strong>기타요구</strong>
+  <%= @project.pcontent %>
 </p>
 
 <p>
@@ -30,13 +44,10 @@
   <%= @project.pcontent %>
 </p>
 
-<p>
-  <strong>필요한기술 태그</strong>
-  <%= @project.ptag %>
-</p>
+
 <div>
 <p>
-  <strong>자료</strong>
+  <strong>사진</strong>
 </p>
 <% @project.photos.each do | photo | %>
   <img src="<%= photo.thumb.url %>" />
@@ -60,3 +71,5 @@
 <%= link_to '[목록으로가기]', projects_path %>
 <%= link_to '[수정]', edit_project_path(@project) %>
 <a href="/projects/delete/<%=@project.id%>" data-confirm="진짜로 삭제 하시겠어요?"data-method="post">[삭제]</a>
+
+</div>

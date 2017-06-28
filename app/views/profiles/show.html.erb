@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Name:</strong>
+  <%= @profile.name %>
+</p>
+
+ <div class="field">
+    <%= f.label :이름, :class => "name" %><br />
+    <%= f.email_field :name, :class => "name-box", autofocus: true %>
+  </div>
+<p>
   <strong>Carrier:</strong>
   <%= @profile.carrier %>
 </p>
